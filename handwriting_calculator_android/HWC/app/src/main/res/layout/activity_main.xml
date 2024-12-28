@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    android:padding="16dp">
+
+    <!-- شريط العنوان أعلى الشاشة -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handwriting Calculator"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:background="#008080"
+        android:gravity="center"
+        android:padding="14dp"
+        android:textStyle="bold"/>
+
+    <!-- FrameLayout لاحتواء الـ DrawingView و الـ TextView -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:gravity="top|center_horizontal">
+
+        <!-- شاشة الرسم (DrawingView) لاصقة بالأعلى -->
+        <com.example.hwc.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+
+            />
+
+        <!-- TextView لعرض النتيجة في المنتصف -->
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="النتيجة هنا"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <!-- زر حساب (يظهر تحت الـ DrawingView) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- زر حساب -->
+        <Button
+                android:id="@+id/calculateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#008080"
+                android:layout_marginEnd="16dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="12dp"
+                android:elevation="4dp" />
+
+        <!-- زر مسح -->
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF66B2"
+            android:layout_marginStart="16dp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+</LinearLayout>
